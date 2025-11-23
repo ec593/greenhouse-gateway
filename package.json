@@ -1,0 +1,19 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "temp": "node simulators/temp-sensor.js",
+    "humidity": "node simulators/humidity-sensor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ecyffka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
