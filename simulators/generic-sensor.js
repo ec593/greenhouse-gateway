@@ -1,5 +1,7 @@
 
 const GATEWAY_URL = "http://localhost:3000";
+const TOKEN = process.env.DEVICE_TOKEN;
+const SECRET = process.env.INTERNAL_SECRET;
 
 export class GenericSensor {
 
@@ -23,7 +25,9 @@ export class GenericSensor {
         try {
             const response = await fetch(`${GATEWAY_URL}/data`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json",
+                           "Authorization": `Bearer ${TOKEN}`,
+                           "x-internal-secret": SECRET },
                 body: JSON.stringify(payload)
             });
 
